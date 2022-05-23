@@ -2,7 +2,8 @@
 function random(){
 	img=document.getElementsByTagName("img");
 	var a=Math.ceil(Math.random()*5)+1;
-	var b=Math.ceil(Math.random()*6)+1;
+	var b=Math.ceil(Math.random()*5)+1;
+	
 	img[0].src="images/dice"+a+".png";
 	img[1].src="images/dice"+b+".png";
 	

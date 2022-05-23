@@ -8,23 +8,24 @@ function random(){
 	
 	head=document.getElementsByTagName("h1");
 	if(a>b)
-		head[0].innerHTML=:triangular_flag_on_post:+"Player1 won";
+		head[0].innerHTML=String.fromCodePoint(0x1F6A9)+" Player1 won";
 	else if(a<b)
-		head[0].innerHTML=:triangular_flag_on_post:+"Player2 won";
+		head[0].innerHTML=String.fromCodePoint(0x1F6A9)+"  Player2 won";
 	else
-		head[0].innerHTML=:triangular_flag_on_post:+"Tie Game";
+		head[0].innerHTML=String.fromCodePoint(0x1F6A9)+"  Tie Game";
 }
 
 
 window.onload = function() {
-    var reloading = sessionStorage.getItem("reloading");
-    if (reloading) {
-        sessionStorage.removeItem("reloading");
-        rand();
+	
+	var firstTime = localStorage.getItem("first_time");
+	if(!firstTime) {
+		// first time loaded!
+		localStorage.setItem("first_time","1");
+	}
+	
+    else{
+		localStorage.setItem("first_time","1");
+        random();
     }
-}
-
-function reloadP() {
-    sessionStorage.setItem("reloading", "true");
-    document.location.reload();
 }

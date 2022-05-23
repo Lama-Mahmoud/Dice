@@ -6,6 +6,13 @@ function random(){
 	img[0].src="images/dice"+a+".png";
 	img[1].src="images/dice"+b+".png";
 	
+	head=document.getElementsByTagName("h1");
+	if(a>b)
+		head[0].innerHTML=:triangular_flag_on_post:+"Player1 won";
+	else if(a<b)
+		head[0].innerHTML=:triangular_flag_on_post:+"Player2 won";
+	else
+		head[0].innerHTML=:triangular_flag_on_post:+"Tie Game";
 }
 
 
